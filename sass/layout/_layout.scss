@@ -1,0 +1,272 @@
+/* Header
+   ================================================================================================================== */
+
+.header {
+  height: 100%;
+  width: 100%;
+
+  background: url('../images/header-background.jpg') no-repeat left;
+  color: $white;
+
+  @include background-size(cover);
+  @include flexbox;
+  @include justify-content(center);
+  @include align-items(center);
+
+  @include breakpoint($breakpoint-lap) {
+    background-position: center;
+  }
+
+  @include breakpoint($breakpoint-desk) {
+    position: fixed;
+    top: 0;
+  }
+
+  // Header inner
+  &--inner {
+    max-height: 50%;
+    padding: 3em;
+
+    background-color: transparentize($black, .5);
+
+    @include box-sizing(border-box);
+
+    @include breakpoint($breakpoint-desk) {
+      max-width: 60%;
+    }
+  }
+
+  // Big header
+  &--big {
+    font-size: 2em;
+    font-weight: 700;
+    text-align: center;
+
+    @include breakpoint($breakpoint-lap) {
+      font-size: 3em;
+    }
+
+    @include breakpoint($breakpoint-desk) {
+      position: relative;
+
+      font-size: 3.5em;
+    }
+
+    @include breakpoint($breakpoint-bigscreen) {
+      font-size: 5em;
+    }
+
+    // Tweaking for landscape
+    @media screen and (orientation:landscape) and (max-height: 287px) {
+      font-size: 1.5em;
+    }
+  }
+
+  // Sub header
+  &--sub {
+    margin-bottom: 2em;
+
+    font-weight: 300;
+    text-align: center;
+
+    @include text-shadow(1px 1px 0 transparentize($black, .75));
+
+    @include breakpoint($breakpoint-lap) {
+      font-size: 1.25em;
+    }
+
+    @include breakpoint($breakpoint-desk) {
+      position: relative;
+
+      font-size: 1.75em;
+    }
+
+    @include breakpoint($breakpoint-bigscreen) {
+      font-size: 2em;
+    }
+
+    // Tweaking for landscape
+    @media screen and (orientation:landscape) and (max-height: 287px) {
+      font-size: 1em;
+    }
+  }
+
+  // Link button
+  &--button {
+    &-wrapper {
+      text-align: center;
+    }
+
+    &-link {
+      border: 2px solid $white;
+      display: block;
+      margin-right: auto;
+      margin-left: auto;
+      max-width: 15em;
+      padding-top: .6em;
+      padding-bottom: .75em;
+      width: 75%;
+
+      background-color: transparentize($black, .65);
+      color: $white;
+      font-weight: 600;
+      text-align: center;
+      text-decoration: none;
+
+      &:link,
+      &:visited,
+      &:hover,
+      &:active {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      &:hover {
+        background-color: transparentize($black, .35);
+      }
+
+      @include border-radius(10px);
+      @include box-sizing(border-box);
+
+      @include breakpoint($breakpoint-lap) {
+        width: 40%;
+
+        font-size: 1.5em;
+      }
+
+      @include breakpoint($breakpoint-desk) {
+        width: 30%;
+      }
+
+      // Tweaking for mobile device landscape (HTC One so far)
+      @media screen and (orientation:landscape) and (max-height: 287px) {
+        width: 30%;
+
+        font-size: 1em;
+      }
+    }
+  }
+}
+
+
+/* Demos
+   ================================================================================================================== */
+
+.demos {
+  position: relative;
+  z-index: 90;
+
+  height: 100%;
+  padding: 4em 2em 2em;
+  width: 100%;
+
+  background-color: $white;
+
+  @include box-sizing(border-box);
+
+  @include breakpoint($breakpoint-desk) {
+    top: 100%;
+
+    padding: 4em;
+  }
+
+  &--header {
+    margin-bottom: 1.5em;
+
+    color: #535353;
+    font-size: 2em;
+    text-align: center;
+  }
+
+  &--inner {
+    margin-bottom: 2em;
+
+    @include breakpoint($breakpoint-lap) {
+      @include flexbox;
+      @include justify-content(space-around);
+      @include flex-wrap(wrap);
+    }
+  }
+
+  &--demo {
+    border: 1px solid $gray-border;
+    margin-bottom: 2em;
+    padding-top: 2em;
+    max-width: 100%;
+
+    @include box-sizing(border-box);
+    @include flex-grow(1);
+
+    @include breakpoint($breakpoint-lap) {
+      min-width: 35%;
+      max-width: 40%;
+    }
+
+    @include breakpoint($breakpoint-desk) {
+      min-width: 35%;
+      max-width: 40%;
+    }
+
+    @include breakpoint($breakpoint-bigscreen) {
+      min-width: 20%;
+      max-width: 30%;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &-inner {
+      text-align: center;
+    }
+
+    &-header {
+      margin-bottom: .5em;
+      padding: 0 .5em;
+
+      font-size: 1.5em;
+      font-weight: 600;
+    }
+
+    &-description {
+      margin-bottom: 2.5em;
+      min-height: 3em;
+      padding: 0 .5em;
+    }
+
+    &-link,
+    &-no-link {
+      border-top: 1px solid $gray-border;
+      display: block;
+      margin-right: auto;
+      margin-left: auto;
+      padding-top: .6em;
+      padding-bottom: .6em;
+
+      font-weight: 300;
+
+      &:link,
+      &:visited,
+      &:hover,
+      &:active {
+        text-decoration: none;
+      }
+
+      &:hover {
+        background-color: #f1f1f1;
+      }
+    }
+
+    &-no-link {
+      color: lighten($black, 50%);
+    }
+  }
+
+  &--top-link {
+    display: block;
+    margin-bottom: 1.5em;
+
+    font-size: 1.25em;
+    text-align: center;
+  }
+}
