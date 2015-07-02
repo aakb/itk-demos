@@ -11,6 +11,8 @@
    ================================================================================================================== */
 /* Link colors
    ================================================================================================================== */
+/* Misc
+   ================================================================================================================== */
 /**
  *
  * Mixins
@@ -369,6 +371,7 @@ img {
       position: fixed;
       top: 0; } }
   .header--inner {
+    border-radius: 0.5em;
     max-height: 50%;
     padding: 3em;
     background-color: rgba(0, 0, 0, 0.5);
@@ -482,39 +485,28 @@ img {
         display: -moz-flex;
         display: -ms-flexbox;
         display: flex;
-        -ms-flex-pack: distribute;
-        -webkit-justify-content: space-around;
-        -moz-justify-content: space-around;
-        justify-content: space-around;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        -moz-justify-content: center;
+        justify-content: center;
         -webkit-flex-wrap: wrap;
         -moz-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
         flex-wrap: wrap; } }
   .demos--demo {
     border: 1px solid #e1e1e1;
+    border-radius: 0.5em;
     margin-bottom: 2em;
     padding-top: 2em;
-    max-width: 100%;
+    width: 100%;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    -webkit-box-flex: 1;
-    -webkit-flex-grow: 1;
-    -moz-flex-grow: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1; }
-    @media only screen and (min-width: 481px) {
-      .demos--demo {
-        min-width: 35%;
-        max-width: 40%; } }
+    box-sizing: border-box; }
     @media only screen and (min-width: 1024px) {
       .demos--demo {
-        min-width: 35%;
-        max-width: 40%; } }
-    @media only screen and (min-width: 1700px) {
-      .demos--demo {
-        min-width: 20%;
-        max-width: 30%; } }
+        margin-left: 2em;
+        width: 30%; } }
     .demos--demo:last-child {
       margin-right: 0; }
     .demos--demo-inner {
@@ -530,11 +522,13 @@ img {
       padding: 0 .5em; }
     .demos--demo-link, .demos--demo-no-link {
       border-top: 1px solid #e1e1e1;
+      border-radius: 0 0 .5em .5em;
       display: block;
       margin-right: auto;
       margin-left: auto;
       padding-top: .6em;
       padding-bottom: .6em;
+      background-color: #e1e1e1;
       font-weight: 300; }
       .demos--demo-link:link, .demos--demo-link:visited, .demos--demo-link:hover, .demos--demo-link:active, .demos--demo-no-link:link, .demos--demo-no-link:visited, .demos--demo-no-link:hover, .demos--demo-no-link:active {
         text-decoration: none; }
