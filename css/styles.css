@@ -511,6 +511,8 @@ img {
     .demos--demo:last-child {
       margin-right: 0; }
     .demos--demo-inner {
+      padding-right: .5em;
+      padding-left: .5em;
       text-align: center; }
     .demos--demo-header {
       margin-bottom: .5em;
@@ -521,7 +523,7 @@ img {
       margin-bottom: 2.5em;
       min-height: 3em;
       padding: 0 .5em; }
-    .demos--demo-link, .demos--demo-no-link {
+    .demos--demo-link {
       border-top: 1px solid #e1e1e1;
       border-radius: 0 0 .5em .5em;
       display: block;
@@ -530,13 +532,11 @@ img {
       padding-top: .6em;
       padding-bottom: .6em;
       background-color: #e1e1e1;
-      font-weight: 300; }
-      .demos--demo-link:link, .demos--demo-link:visited, .demos--demo-link:hover, .demos--demo-link:active, .demos--demo-no-link:link, .demos--demo-no-link:visited, .demos--demo-no-link:hover, .demos--demo-no-link:active {
+      text-align: center; }
+      .demos--demo-link:link, .demos--demo-link:visited, .demos--demo-link:hover, .demos--demo-link:active {
         text-decoration: none; }
-      .demos--demo-link:hover, .demos--demo-no-link:hover {
+      .demos--demo-link:hover {
         background-color: #f1f1f1; }
-    .demos--demo-no-link {
-      color: gray; }
   .demos--top-link {
     display: block;
     margin-bottom: 1.5em;

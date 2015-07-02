@@ -210,6 +210,9 @@
     }
 
     &-inner {
+      padding-right: .5em;
+      padding-left: .5em;
+
       text-align: center;
     }
 
@@ -227,8 +230,7 @@
       padding: 0 .5em;
     }
 
-    &-link,
-    &-no-link {
+    &-link {
       border-top: 1px solid $gray;
       border-radius: 0 0 .5em .5em;
       display: block;
@@ -238,7 +240,7 @@
       padding-bottom: .6em;
 
       background-color: $gray;
-      font-weight: 300;
+      text-align: center;
 
       &:link,
       &:visited,
@@ -250,10 +252,6 @@
       &:hover {
         background-color: #f1f1f1;
       }
-    }
-
-    &-no-link {
-      color: lighten($black, 50%);
     }
   }
 
