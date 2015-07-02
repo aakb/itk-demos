@@ -495,18 +495,23 @@ img {
         -ms-flex-wrap: wrap;
         flex-wrap: wrap; } }
   .demos--demo {
-    border: 1px solid #e1e1e1;
-    border-radius: 0.5em;
-    margin-bottom: 2em;
-    padding-top: 2em;
-    width: 100%;
-    background-color: #fff;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box; }
+    width: 100%; }
+    .demos--demo .front,
+    .demos--demo .back {
+      border: 1px solid #e1e1e1;
+      border-radius: 0.5em;
+      margin-bottom: 2em;
+      padding-top: 2em;
+      padding-bottom: 3em;
+      min-height: 15em;
+      width: 100%;
+      background-color: #fff;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box; }
     @media only screen and (min-width: 1024px) {
       .demos--demo {
-        margin-left: 2em;
+        margin-right: 2em;
         width: 30%; } }
     .demos--demo:last-child {
       margin-right: 0; }
@@ -524,6 +529,8 @@ img {
       min-height: 3em;
       padding: 0 .5em; }
     .demos--demo-link {
+      position: absolute;
+      bottom: 0;
       border-top: 1px solid #e1e1e1;
       border-radius: 0 0 .5em .5em;
       display: block;
@@ -531,6 +538,7 @@ img {
       margin-left: auto;
       padding-top: .6em;
       padding-bottom: .6em;
+      width: 100%;
       background-color: #e1e1e1;
       text-align: center; }
       .demos--demo-link:link, .demos--demo-link:visited, .demos--demo-link:hover, .demos--demo-link:active {
@@ -542,3 +550,36 @@ img {
     margin-bottom: 1.5em;
     font-size: 1.25em;
     text-align: center; }
+
+/* Flip
+   ================================================================================================================== */
+/* entire container, keeps perspective */
+.flip-container {
+  perspective: 1000; }
+
+/* flip the pane when hovered */
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+  transform: rotateY(180deg); }
+
+/* flip speed goes here */
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative; }
+
+/* hide back of pane during swap */
+.front, .back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+/* front pane, placed above back */
+.front {
+  z-index: 2;
+  /* for firefox 31 */
+  transform: rotateY(0deg); }
+
+/* back, initially hidden pane */
+.back {
+  transform: rotateY(180deg); }

@@ -190,18 +190,25 @@
   }
 
   &--demo {
-    border: 1px solid $gray;
-    border-radius: $border-radius;
-    margin-bottom: 2em;
-    padding-top: 2em;
     width: 100%;
 
-    background-color: $white;
+    .front,
+    .back {
+      border: 1px solid $gray;
+      border-radius: $border-radius;
+      margin-bottom: 2em;
+      padding-top: 2em;
+      padding-bottom: 3em;
+      min-height: 15em;
+      width: 100%;
 
-    @include box-sizing(border-box);
+      background-color: $white;
+
+      @include box-sizing(border-box);
+    }
 
     @include breakpoint($breakpoint-desk) {
-      margin-left: 2em;
+      margin-right: 2em;
       width: 30%;
     }
 
@@ -231,6 +238,9 @@
     }
 
     &-link {
+      position: absolute;
+      bottom: 0;
+
       border-top: 1px solid $gray;
       border-radius: 0 0 .5em .5em;
       display: block;
@@ -238,6 +248,7 @@
       margin-left: auto;
       padding-top: .6em;
       padding-bottom: .6em;
+      width: 100%;
 
       background-color: $gray;
       text-align: center;
@@ -262,4 +273,46 @@
     font-size: 1.25em;
     text-align: center;
   }
+}
+
+
+/* Flip
+   ================================================================================================================== */
+
+/* entire container, keeps perspective */
+.flip-container {
+  perspective: 1000;
+}
+/* flip the pane when hovered */
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+  transform: rotateY(180deg);
+}
+
+/* flip speed goes here */
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+
+  position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+  backface-visibility: hidden;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+  z-index: 2;
+  /* for firefox 31 */
+  transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+  transform: rotateY(180deg);
 }
