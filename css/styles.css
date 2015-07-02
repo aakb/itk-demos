@@ -463,7 +463,7 @@ img {
   height: 100%;
   padding: 4em 2em 2em;
   width: 100%;
-  background-color: #fff;
+  background: url("../images/geometry2.png");
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
@@ -500,6 +500,7 @@ img {
     margin-bottom: 2em;
     padding-top: 2em;
     width: 100%;
+    background-color: #fff;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box; }
