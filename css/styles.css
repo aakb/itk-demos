@@ -495,6 +495,8 @@ img {
         -ms-flex-wrap: wrap;
         flex-wrap: wrap; } }
   .demos--demo {
+    margin-bottom: 2em;
+    min-height: 16em;
     width: 100%; }
     .demos--demo .front,
     .demos--demo .back {
@@ -503,7 +505,7 @@ img {
       margin-bottom: 2em;
       padding-top: 2em;
       padding-bottom: 3em;
-      min-height: 15em;
+      min-height: 16em;
       width: 100%;
       background-color: #fff;
       -moz-box-sizing: border-box;
@@ -513,8 +515,6 @@ img {
       .demos--demo {
         margin-right: 2em;
         width: 30%; } }
-    .demos--demo:last-child {
-      margin-right: 0; }
     .demos--demo-inner {
       padding-right: .5em;
       padding-left: .5em;
@@ -563,7 +563,7 @@ img {
 
 /* flip speed goes here */
 .flipper {
-  transition: 0.6s;
+  transition: 1s;
   transform-style: preserve-3d;
   position: relative; }
 
